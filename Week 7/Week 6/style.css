@@ -1,0 +1,42 @@
+
+.text-highlight {
+    color: rgb(151, 194, 243);
+    font-weight: bold;
+}
+.boxed-content {
+    border: 1px solid black;
+    padding: 5px;
+    background-color: rgb(252, 110, 212);
+}
+#main-heading {
+    text-align: center;
+    font-size: 24px;
+}
+#promo-text {
+    font-style: italic;
+    text-align: center;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+nav {
+    background-color: black;
+    padding: 10px;
+    text-align: center;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+nav a:hover {
+    background-color: rgb(252, 110, 212);
+}
+services-page {
+    background-image: url('dog_background.jpg');
+    background-size: cover;
+}
