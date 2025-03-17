@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="style.css">
+<head>
+    <title>Contact Us - Mojo's Mutts</title>
+    <style>
+        .error {
+            color: rgb(185, 3, 3);
+            font-size: 0.9em;
+        }
+        input:invalid, textarea:invalid {
+            border-color: rgb(181, 1, 1);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <h1>Contact Us</h1>
+    <form id="contactForm" onsubmit="return validateForm()">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        <span id="nameError" class="error"></span>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        <span id="emailError" class="error"></span>
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="4" required></textarea><br><br>
+        <span id="messageError" class="error"></span>
+        <label for="terms">
+            <input type="checkbox" id="terms" name="terms" required> I agree to the terms and conditions
+        </label><br><br>
+        <span id="termsError" class="error"></span>
+        <button type="submit">Send</button>
+    </form>
+    <script>
+        function validateForm() {
+            document.getElementById('nameError').textContent = '';
+            document.getElementById('emailError').textContent = '';
+            document.getElementById('messageError').textContent = '';
+            document.getElementById('termsError').textContent = '';
+            document.getElementById('name').style.borderColor = '';
+            document.getElementById('email').style.borderColor = '';
+            document.getElementById('message').style.borderColor = '';
+            document.getElementById('terms').style.borderColor = '';
+            let valid = true;
+            if (document.getElementById('name').value === '') {
+                document.getElementById('nameError').textContent = 'A name is required.';
+                document.getElementById('name').style.borderColor = 'red';
+                valid = false;
+            }
+            if (document.getElementById('email').value === '') {
+                document.getElementById('emailError').textContent = 'An email is required.';
+                document.getElementById('email').style.borderColor = 'red';
+                valid = false;
+            }
+            if (document.getElementById('message').value === '') {
+                document.getElementById('messageError').textContent = 'A message is required.';
+                document.getElementById('message').style.borderColor = 'red';
+                valid = false;
+            }
+            if (!document.getElementById('terms').checked) {
+                document.getElementById('termsError').textContent = 'You must agree to the terms.';
+                document.getElementById('terms').style.borderColor = 'red';
+                valid = false;
+            }
+            return valid;
+        }
+    </script>
+</body>
+</html>
